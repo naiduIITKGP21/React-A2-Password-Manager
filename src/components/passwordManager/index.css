@@ -1,0 +1,192 @@
+.app-container {
+  background-image: linear-gradient(to bottom, #9ba9eb, #c3caea);
+  min-height: 100vh;
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-container {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .main-container {
+    max-width: 1000px;
+  }
+}
+.pm-logo-container {
+  width: 100%;
+  align-self: flex-start;
+  padding-left: none;
+}
+.pm-logo-img {
+  max-width: 200px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.pm-new-pass-container {
+  padding: 20px 10px 20px 10px;
+  background-color: #5763a5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.pm-sm-img {
+  width: 85%;
+  max-width: 500px;
+}
+.add-pass-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: #454f84;
+  padding: 20px 20px 20px 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .pm-new-pass-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .add-pass-card {
+    width: 60%;
+  }
+  .pm-sm-img {
+    display: none;
+  }
+}
+.add-new-pass-heading {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 23px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+}
+.icon-container {
+  background-color: transparent;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+.input {
+  border: none;
+  border-left: 1px solid #94a3b8;
+  background-color: transparent;
+  padding: 10px 5px 10px 10px;
+  height: 100%;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #94a3b8;
+  outline: none;
+}
+.add-button {
+  align-self: flex-end;
+  background-color: #0b69ff;
+  width: 100px;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pm-lg-img {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .pm-lg-img {
+    display: block;
+    width: 40%;
+    padding: 10px;
+  }
+}
+
+.pm-urpass-container {
+  padding: 20px 10px 20px 10px;
+  background-color: #5763a5;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.ur-pass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ur-pass-text {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.pass-count {
+  margin-left: 10px;
+  border: 1px solid #b6c3ca;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+.search-container {
+  background-color: #ffffff;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+.search-icon {
+  height: 20px;
+}
+.search-input {
+  border: none;
+  flex-grow: 1;
+  outline: none;
+}
+.hr-line {
+  border: 1px solid #7683cb;
+  background-color: #7683cb;
+}
+.show-pass-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.show-pass {
+  color: #ffffff;
+}
+.ul-container {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}

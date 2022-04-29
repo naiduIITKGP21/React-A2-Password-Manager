@@ -1,0 +1,53 @@
+.list-container {
+  padding: 10px;
+  border: 1px solid #b6c3ca;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+.name-initial-container {
+  background-color: blue;
+  font-size: 23px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 8px;
+}
+
+.pass-details-container {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+.website {
+  color: #ffffff;
+  font-size: 12px;
+}
+.username {
+  line-height: 0.2;
+  color: #ffffff;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.password-text {
+  color: #ffffff;
+  font-size: 12px;
+}
+.password-img {
+  background-color: transparent;
+  width: 50px;
+}
+.delete-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.delete-icon {
+  height: 20px;
+}

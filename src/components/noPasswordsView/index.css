@@ -1,0 +1,12 @@
+.no-pass-view-img {
+  width: 300px;
+}
+.no-pass-text {
+  color: #ffffff;
+}
+.no-pass-view-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
