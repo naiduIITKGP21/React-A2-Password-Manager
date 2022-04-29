@@ -10,15 +10,19 @@ class PasswordManager extends Component {
     usernameInput: '',
     passwordInput: '',
     searchInput: '',
-    passwords: [
-      {
-        id: v4(),
-        website: 'you.com',
-        username: 'naidu',
-        password: 'applap',
-      },
-    ],
+    passwords: [],
     isShowPassword: true,
+  }
+
+  onChangeSearchInput = event =>
+    this.setState({searchInput: event.target.value})
+
+  filterBySearch = () => {
+    const {passwords, searchInput} = this.state
+    const filteredResults = passwords.filter(eachObject =>
+      eachObject.website.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+    return filteredResults
   }
 
   onDeletePassword = id => {
@@ -58,6 +62,7 @@ class PasswordManager extends Component {
 
   render() {
     const {websiteInput, usernameInput, passwordInput, passwords} = this.state
+    const searchResults = this.filterBySearch()
     return (
       <div className="app-container">
         <div className="main-container">
@@ -151,7 +156,11 @@ class PasswordManager extends Component {
                   alt="search"
                   src="https://assets.ccbp.in/frontend/react-js/password-manager-search-img.png"
                 />
-                <input className="search-input" type="search" />
+                <input
+                  onChange={this.onChangeSearchInput}
+                  className="search-input"
+                  type="search"
+                />
               </div>
             </div>
             <hr className="hr-line" />
@@ -164,8 +173,8 @@ class PasswordManager extends Component {
               <span className="show-pass">Show Password</span>
             </div>
             <ul className="ul-container">
-              {passwords.length !== 0 ? (
-                passwords.map(eachObject => (
+              {searchResults.length !== 0 ? (
+                searchResults.map(eachObject => (
                   <Password
                     key={eachObject.id}
                     details={eachObject}
