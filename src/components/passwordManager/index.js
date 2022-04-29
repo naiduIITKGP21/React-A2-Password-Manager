@@ -11,7 +11,7 @@ class PasswordManager extends Component {
     passwordInput: '',
     searchInput: '',
     passwords: [],
-    isShowPassword: true,
+    isShowPassword: false,
   }
 
   onChangeSearchInput = event =>
