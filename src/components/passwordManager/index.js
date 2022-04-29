@@ -166,11 +166,14 @@ class PasswordManager extends Component {
             <hr className="hr-line" />
             <div className="show-pass-container">
               <input
+                id="checkbox"
                 className="checkbox"
                 type="checkbox"
                 onChange={this.onCheckShowPassword}
               />
-              <span className="show-pass">Show Password</span>
+              <label htmlFor="checkbox" className="show-pass">
+                Show Password
+              </label>
             </div>
             <ul className="ul-container">
               {searchResults.length !== 0 ? (
