@@ -4,6 +4,16 @@ import Password from '../password'
 import NoPasswordsView from '../noPasswordsView'
 import './index.css'
 
+const colors = [
+  '#7683cb',
+  '#f59e0b',
+  '#10b981',
+  '#b91c1c',
+  '#0ea5e9',
+  '#64748b',
+]
+const l = colors.length
+
 class PasswordManager extends Component {
   state = {
     websiteInput: '',
@@ -32,8 +42,8 @@ class PasswordManager extends Component {
     })
   }
 
-  onCheckShowPassword = () => {
-    this.setState(prevState => ({isShowPassword: !prevState.isShowPassword}))
+  onCheckShowPassword = event => {
+    this.setState({isShowPassword: event.target.checked})
   }
 
   onWebsiteInput = event => this.setState({websiteInput: event.target.value})
@@ -45,15 +55,19 @@ class PasswordManager extends Component {
   onSubmitForm = event => {
     event.preventDefault()
     const {websiteInput, usernameInput, passwordInput} = this.state
+
+    const nameInitialBackgroundColor = colors[Math.floor(Math.random() * l)]
+
     const newPassword = {
       id: v4(),
       website: websiteInput,
       username: usernameInput,
       password: passwordInput,
+      backgroundColor: nameInitialBackgroundColor,
     }
 
     this.setState(prevState => ({
-      passwords: [...prevState, newPassword],
+      passwords: [...prevState.passwords, newPassword],
       websiteInput: '',
       usernameInput: '',
       passwordInput: '',
@@ -61,7 +75,13 @@ class PasswordManager extends Component {
   }
 
   render() {
-    const {websiteInput, usernameInput, passwordInput, passwords} = this.state
+    const {
+      websiteInput,
+      usernameInput,
+      passwordInput,
+      passwords,
+      isShowPassword,
+    } = this.state
     const searchResults = this.filterBySearch()
     return (
       <div className="app-container">
@@ -145,10 +165,10 @@ class PasswordManager extends Component {
           <div className="pm-urpass-container">
             <div className="ur-pass-header">
               <div className="ur-pass-container">
-                <p className="ur-pass-text">
+                <h1 className="ur-pass-text">
                   Your Passwords
                   <span className="pass-count">{passwords.length}</span>
-                </p>
+                </h1>
               </div>
               <div className="search-container">
                 <img
@@ -169,10 +189,10 @@ class PasswordManager extends Component {
                 id="checkbox"
                 className="checkbox"
                 type="checkbox"
-                onChange={this.onCheckShowPassword}
+                onClick={this.onCheckShowPassword}
               />
               <label htmlFor="checkbox" className="show-pass">
-                Show Password
+                Show Passwords
               </label>
             </div>
             <ul className="ul-container">
@@ -181,6 +201,7 @@ class PasswordManager extends Component {
                   <Password
                     key={eachObject.id}
                     details={eachObject}
+                    isShowPassword={isShowPassword}
                     onDeletePassword={this.onDeletePassword}
                   />
                 ))

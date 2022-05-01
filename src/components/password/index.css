@@ -5,9 +5,10 @@
   display: flex;
   align-items: center;
   min-width: 200px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 .name-initial-container {
-  background-color: blue;
   font-size: 23px;
   width: 40px;
   height: 40px;

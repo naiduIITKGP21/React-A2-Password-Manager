@@ -1,8 +1,8 @@
 import './index.css'
 
 const Password = props => {
-  const {details, onDeletePassword} = props
-  const {id, website, username, password, isShowPassword} = details
+  const {details, onDeletePassword, isShowPassword} = props
+  const {id, website, username, password, backgroundColor} = details
 
   const nameInitial = username[0].toUpperCase()
 
@@ -13,7 +13,7 @@ const Password = props => {
   return (
     <li>
       <div className="list-container">
-        <div className="name-initial-container">
+        <div className="name-initial-container" style={{backgroundColor}}>
           <p className="name-initial">{nameInitial}</p>
         </div>
         <div className="pass-details-container">
